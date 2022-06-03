@@ -4,7 +4,7 @@ Blogy is a blogging website where i can talk, inform, share my thoughts, ideas w
 ## To contribute
 First, you need to clone the repository.
 ```
-$ git clone <[this-repo](https://github.com/net-js/blogy)>
+$ git clone https://github.com/net-js/blogy
 ```
 Then, you can start coding and then send a pull request.
 ```
