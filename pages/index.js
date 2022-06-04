@@ -9,7 +9,7 @@ function Grid({a}) {
                  const keywords = data.keywords.split(",");
                   return (
                     <div>
-                      <Link key={parseInt(index).toString()} href={`/blogs/${data.filename}`} >
+                      <Link href={`/blogs/${data.filename}`} >
                         <a key={index} className={styles.card}>
                           <h2>{data.title}</h2>
                           <p dangerouslySetInnerHTML={{__html: data.dp}}></p>
