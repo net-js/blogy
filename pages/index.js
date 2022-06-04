@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Link from "net/link"
+import Link from "next/link"
 
 function Grid({a}) {
   return (
