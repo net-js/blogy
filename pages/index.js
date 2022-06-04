@@ -10,7 +10,7 @@ function Grid({a}) {
                   return (
                     <div>
                       <Link key={parseInt(index).toString()} href={`/blogs/${data.filename}`} >
-                        <a className={styles.card}>
+                        <a key={index} className={styles.card}>
                           <h2>{data.title}</h2>
                           <p dangerouslySetInnerHTML={{__html: data.dp}}></p>
                           <hr />
