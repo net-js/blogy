@@ -66,7 +66,7 @@ export function getStaticProps({params}) {
   const path = require("path");
 
   const metadata = JSON.parse(fs.readFileSync(path.join(process.cwd(), "contents/", `${params.id}.json`,)))
-  const file = fs.readFileSync(path.join(process.cwd(), "/contents/", `${json.filename}.html`)).toString()
+  const file = fs.readFileSync(path.join(process.cwd(), "/contents/", `${metadata.filename}.html`)).toString()
   return {
     props: {
       ...metadata,
