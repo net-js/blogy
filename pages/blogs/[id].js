@@ -50,7 +50,7 @@ function BlogPostPage(props) {
         </p>
         <div dangerouslySetInnerHTML={{ __html: props.file, }} className={ styles.main }></div>
         <footer>
-        <div itemscope itemType="http://schema.org/Person">
+        <div itemScope itemType="http://schema.org/Person">
           <a itemProp="url" href="/author">
             <div itemProp="name"><strong>Author<span>:</span> Net-js <span>|</span> <i>{props.date}</i></strong></div>
           </a>
