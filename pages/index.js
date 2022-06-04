@@ -8,16 +8,18 @@ function Grid({a}) {
               {a.map((data, index) => {
                  const keywords = data.keywords.split(",");
                   return (
-                    <>
-                      <Link key={parseInt(index).toString()} href={`/blogs/${data.filename}`} className={styles.card}>
+                    <div>
+                      <Link key={parseInt(index).toString()} href={`/blogs/${data.filename}`} >
+                        <a className={styles.card}>
                           <h2>{data.title}</h2>
                           <p dangerouslySetInnerHTML={{__html: data.dp}}></p>
                           <hr />
                           <p>{keywords.map((word, index) => {
                               return <span key={index} className={styles.keyword}>#{word.trim()}</span>
                           })}</p>
+                          </a>
                       </Link>
-                    </>
+                    </div>
                   )
                })
               }

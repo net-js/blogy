@@ -47,8 +47,7 @@ function BlogPostPage(props) {
       <section>
 
         <h1 className={styles.title}>{props.title}</h1>
-        <p className={styles.dp} dangerouslySetInnerHTML={{__html: props.dp}}>
-        </p>
+        <p className={styles.dp} dangerouslySetInnerHTML={{__html: props.dp}}></p>
         <div dangerouslySetInnerHTML={{ __html: props.file, }} className={ styles.main }></div>
         <footer>
         <div itemScope itemType="http://schema.org/Person">
@@ -62,14 +61,15 @@ function BlogPostPage(props) {
   );
 }
 
-export function getStaticProps(context) {
+export function getStaticProps({params}) {
   const fs = require("fs");
-  const path = require("path")
-  const json = JSON.parse(fs.readFileSync(path.join(process.cwd(), "contents/", `${context.params.id}.json`,)))
+  const path = require("path");
+
+  const metadata = JSON.parse(fs.readFileSync(path.join(process.cwd(), "contents/", `${params.id}.json`,)))
   const file = fs.readFileSync(path.join(process.cwd(), "/contents/", `${json.filename}.html`)).toString()
   return {
     props: {
-      ...json,
+      ...metadata,
       file
     }
   };
@@ -80,7 +80,7 @@ export async function getStaticPaths() {
 
   const blogs = fs.readdirSync(`${process.cwd()}/contents`, "utf-8")
     .filter((fn) => fn.endsWith(".json"))
-    .map((fn) => fn.replace(".json", ""));
+    .map((fn) => fn.replace(".json", ''));
 
   return {
     paths: blogs.map((path) => {
