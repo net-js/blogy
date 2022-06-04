@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from "../../styles/Blog.module.css";
+import Link from "next/link"
 
 function BlogPostPage(props) {
   var title = `${props.title} - on Blog-y`;
@@ -51,9 +52,9 @@ function BlogPostPage(props) {
         <div dangerouslySetInnerHTML={{ __html: props.file, }} className={ styles.main }></div>
         <footer>
         <div itemScope itemType="http://schema.org/Person">
-          <a itemProp="url" href="/author">
+          <Link itemProp="url" href="/author">
             <div itemProp="name"><strong>Author<span>:</span> Net-js <span>|</span> <i>{props.date}</i></strong></div>
-          </a>
+          </Link>
         </div>
         </footer>
       </section>

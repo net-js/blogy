@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import link from "net/link"
 
 function Grid({a}) {
   return (
@@ -7,14 +8,14 @@ function Grid({a}) {
               {a.map((data, index) => {
                  const keywords = data.keywords.split(",");
                   return (
-                      <a key={parseInt(index).toString()} href={`/blogs/${data.filename}`} className={styles.card}>
+                      <Link key={parseInt(index).toString()} href={`/blogs/${data.filename}`} className={styles.card}>
                           <h2>{data.title}</h2>
                           <p dangerouslySetInnerHTML={{__html: data.dp}}></p>
                           <hr />
                           <p>{keywords.map((word, index) => {
                               return <span key={index} className={styles.keyword}>#{word.trim()}</span>
                           })}</p>
-                      </a>
+                      </Link>
                   )
                })
               }
@@ -93,12 +94,12 @@ export default function Home(props) {
       </main>
 
       <footer className={styles.footer}>
-        <a>
+        <Link>
           Open Sourced{' '}
           <span className={styles.logo}>
             <img src="https://github.com/favicon.ico" />
           </span>
-        </a>
+        </Link>
       </footer>
     </div>
   )
