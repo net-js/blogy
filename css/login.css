@@ -1,0 +1,68 @@
+::selection{
+    color: black;
+    background-color: white;
+}
+
+::-moz-selection{
+    color: black;
+    background-color: white;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+main{
+    border: 1px solid black;
+    background-color: white;
+    outline: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+input{
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #333;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    outline: none;
+}
+
+button {
+    width: 60%;
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    background-color: #ff3838;
+    color: white;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    outline: none;
+}
